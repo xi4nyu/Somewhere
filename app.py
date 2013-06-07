@@ -3,13 +3,14 @@
 # App run
 #
 
+import logging
 import webapp2
 
-from view.index import MainHandler, ExecHandler
+from core.util import get_handlers
 from settings import DEBUG
 
 
-app = webapp2.WSGIApplication([
-  ('/', MainHandler),
-  ('/exec', ExecHandler)
-], debug=DEBUG)
+settings = {"debug": DEBUG}
+handlers = get_handlers()
+
+app = webapp2.WSGIApplication(handlers, **settings)

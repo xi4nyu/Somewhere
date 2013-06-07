@@ -1,5 +1,5 @@
 cron:
 - description: seconds summary job
-  url: /
+  url: /exec
   schedule: every 1 minutes
   timezone: Asia/Chongqing
